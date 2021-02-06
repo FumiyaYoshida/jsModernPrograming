@@ -80,6 +80,7 @@
       */
 
       // 03
+      /*
       console.log('u0403');
       
       function Employee(name, salary) {
@@ -96,7 +97,33 @@
 
       console.log(JSON.stringify(harry));
       console.log(JSON.stringify(sally));
+      */
 
+      // 04
+
+      console.log('u0404');
+
+      class Employee {
+        constructor(name, salary) {
+          this.name = name
+          this.salary = salary
+        }
+        raiseSalary(percent) {
+          this.salary *= 1 + percent / 100;
+        }
+      }
+
+      const harry = new Employee('Harry Smith', 90000);
+      const sally = new Employee('Sally Lopez', 100000);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+
+      harry.raiseSalary(10);
+      sally.raiseSalary(10);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
     </script>
   </body>
 </html>
