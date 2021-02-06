@@ -9,6 +9,8 @@
 
       // 01
       /*
+      console.log('u0401');
+
       let harry = {
         name:   'Harry Smith',
         salary: 90000,
@@ -26,6 +28,8 @@
 
       // 02
       /*
+      console.log('u0402');
+
       function createEmployee(name, salary) {
         return {
           name:   name,
@@ -49,6 +53,7 @@
       console.log(JSON.stringify(sally));
       */
 
+      /*
       const employeePrototype = {
         raiseSalary: function(percent) {
           this.salary *= 1 + percent / 100;
@@ -64,7 +69,6 @@
       let harry = createEmployee('Hally Smith', 90000);
       let sally = createEmployee('Sally Lopez', 100000);
       
-      console.log('u040202');
       console.log(JSON.stringify(harry));
       console.log(JSON.stringify(sally));
 
@@ -73,7 +77,26 @@
 
       console.log(JSON.stringify(harry));
       console.log(JSON.stringify(sally));
+      */
+
+      // 03
+      console.log('u0403');
       
+      function Employee(name, salary) {
+        this.name = name
+        this.salary = salary
+      }
+
+      Employee.prototype.raiseSalary = function(percent) {
+        this.salary *= 1 + percent / 100;
+      }
+
+      const harry = new Employee('Harry Smith', 90000);
+      const sally = new Employee('Sally Lopez', 100000);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+
     </script>
   </body>
 </html>
