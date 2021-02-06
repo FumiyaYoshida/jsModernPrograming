@@ -7,6 +7,8 @@
   <body>
     <script>
 
+      // 01
+      /*
       let harry = {
         name:   'Harry Smith',
         salary: 90000,
@@ -20,7 +22,58 @@
       harry.raiseSalary(1);
 
       console.log(JSON.stringify(harry));
+      */
 
+      // 02
+      /*
+      function createEmployee(name, salary) {
+        return {
+          name:   name,
+          salary: salary,
+          raiseSalary(percent) {
+            this.salary *= 1 + percent / 100
+          }
+        }
+      }
+
+      let harry = createEmployee('Hally Smith', 90000);
+      let sally = createEmployee('Sally Lopez', 100000);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+
+      harry.raiseSalary(10);
+      sally.raiseSalary(10);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+      */
+
+      const employeePrototype = {
+        raiseSalary: function(percent) {
+          this.salary *= 1 + percent / 100;
+        }
+      }
+
+      function createEmployee(name, salary) {
+        const result = { name, salary };
+        Object.setPrototypeOf(result, employeePrototype);
+        return result;
+      }
+
+      let harry = createEmployee('Hally Smith', 90000);
+      let sally = createEmployee('Sally Lopez', 100000);
+      
+      console.log('u040202');
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+
+      harry.raiseSalary(10);
+      sally.raiseSalary(10);
+
+      console.log(JSON.stringify(harry));
+      console.log(JSON.stringify(sally));
+      
     </script>
   </body>
 </html>
