@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>u04</title>
+  </head>
+  <body>
+    <script>
+
+      let harry = {
+        name:   'Harry Smith',
+        salary: 90000,
+        raiseSalary(percent) {
+          this.salary *= 1 + percent / 100
+        }
+      };
+
+      console.log(JSON.stringify(harry));
+
+      harry.raiseSalary(1);
+
+      console.log(JSON.stringify(harry));
+
+    </script>
+  </body>
+</html>
