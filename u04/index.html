@@ -100,13 +100,13 @@
       */
 
       // 04
-
+      /*
       console.log('u0404');
 
       class Employee {
         constructor(name, salary) {
-          this.name = name
-          this.salary = salary
+          this.name = name;
+          this.salary = salary;
         }
         raiseSalary(percent) {
           this.salary *= 1 + percent / 100;
@@ -124,6 +124,34 @@
 
       console.log(JSON.stringify(harry));
       console.log(JSON.stringify(sally));
+      */
+
+      // 05
+      console.log('u0405');
+
+      class Person {
+        constructor(last, first) {
+          this.last = last;
+          this.first = first;
+        }
+        get fullName() { return `${this.last}, ${this.first}`}
+        set fullName(value) {
+        */
+          // const parts = value.split(/,\s*/);
+          /*
+          this.last = parts[0];
+          this.first = parts[1];
+        }
+      }
+
+      const person = new Person('Smith', 'Harry');
+      const name = person.fullName;
+
+      console.log(name);
+
+      person.fullName = 'Sally, Lopez';
+
+      console.log(person.fullName);
     </script>
   </body>
 </html>
