@@ -2,11 +2,34 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>u04</title>
+    <title>u09</title>
   </head>
   <body>
     <script>
-	  console.log("hello!");
-	</script>
+      /*
+      console.log("start");
+
+      function sleep(milliSeconds) {
+        var startTime = new Date().getTime();
+        while (new Date().getTime() < startTime + milliSeconds);
+
+        console.log("sleepが完了しました。");
+      }
+
+      sleep(5000); // 実行するのに5秒かかる
+
+      console.log("end");
+      */
+      console.log("start");
+
+      var fs = require('fs');
+      fs.readFile("number.txt", "utf-8", function(err, data){
+        if (err) throw err;
+        console.log("ファイルの読み取り準備ができました。");
+        console.log(data);
+      });
+
+      console.log("end");
+    </script>
   </body>
 </html>
